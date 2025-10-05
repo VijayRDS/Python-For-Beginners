@@ -1,12 +1,12 @@
-# ============================================
-# ⚙️ Python Operators — The Power Behind Logic
-# ============================================
-# Operators are symbols that perform operations on variables and values.
-# They are the *decision-makers* of your code — the logic engine.
+# ===============================================================
+# ⚙️ PYTHON OPERATORS — The Logic Engine of Your Code
+# ===============================================================
+# Operators are special symbols that perform operations on variables and values.
+# They are the *decision-makers* of every program — enabling logic, math, and automation.
 
-# ------------------------------------------------
+# ===============================================================
 # 1️⃣ ARITHMETIC OPERATORS
-# ------------------------------------------------
+# ===============================================================
 # +, -, *, /, %, **, //
 
 a = 15
@@ -16,26 +16,22 @@ print("Addition:", a + b)
 print("Subtraction:", a - b)
 print("Multiplication:", a * b)
 print("Division:", a / b)
-print("Floor Division:", a // b)
+print("Floor Division:", a // b)  # Removes decimals
 print("Modulus (Remainder):", a % b)
 print("Exponentiation:", a ** b)
 
-# 🔹 Practical Use Case:
-# - Banking app interest computation
-# - E-commerce billing and discounts
-# - EMI calculator
-
-# Example: EMI Calculation Formula (Simplified)
+# 🔹 Real-World Example — EMI Calculation
 principal = 100000
-rate = 10 / 100 / 12
-tenure = 12
+rate = 10 / 100 / 12   # 10% annual → monthly
+tenure = 12            # months
+
 emi = principal * rate * (1 + rate)**tenure / ((1 + rate)**tenure - 1)
 print("\nMonthly EMI:", round(emi, 2))
 
 
-# ------------------------------------------------
+# ===============================================================
 # 2️⃣ COMPARISON OPERATORS
-# ------------------------------------------------
+# ===============================================================
 # ==, !=, >, <, >=, <=
 
 x = 20
@@ -48,12 +44,7 @@ print("Less than:", x < y)
 print("Greater than or equal:", x >= y)
 print("Less than or equal:", x <= y)
 
-# 🔹 Practical Use Case:
-# - Eligibility checking (loan approval, age validation)
-# - Ranking systems (students, employees)
-# - Conditional execution in workflows
-
-# Example: Loan eligibility check
+# 🔹 Example — Loan Eligibility
 age = 27
 salary = 40000
 if age > 21 and salary >= 30000:
@@ -62,9 +53,9 @@ else:
     print("Not Eligible ❌")
 
 
-# ------------------------------------------------
+# ===============================================================
 # 3️⃣ LOGICAL OPERATORS
-# ------------------------------------------------
+# ===============================================================
 # and, or, not
 
 is_logged_in = True
@@ -74,43 +65,35 @@ print("\nAND Operator:", is_logged_in and has_subscription)
 print("OR Operator:", is_logged_in or has_subscription)
 print("NOT Operator:", not has_subscription)
 
-# 🔹 Practical Use Case:
-# - Access control (Admin panels)
-# - Workflow automation
-# - AI decision logic
-
-# Example: Access system
+# 🔹 Example — Access Control System
 if is_logged_in and has_subscription:
-    print("Access Granted to Premium Dashboard")
+    print("Access: Premium Dashboard")
 elif is_logged_in:
-    print("Access Granted to Basic Dashboard")
+    print("Access: Basic Dashboard")
 else:
-    print("Login Required")
+    print("Please Log In")
 
 
-# ------------------------------------------------
+# ===============================================================
 # 4️⃣ ASSIGNMENT OPERATORS
-# ------------------------------------------------
+# ===============================================================
 # =, +=, -=, *=, /=, %=, //=, **=
 
 count = 10
-count += 5  # equivalent to count = count + 5
+count += 5  # same as count = count + 5
 print("\nUpdated Count:", count)
 
 balance = 1000
-balance -= 200  # deduction
+balance -= 200  # debit
 balance += 500  # credit
 print("Updated Balance:", balance)
 
-# 🔹 Practical Use Case:
-# - Wallet updates
-# - Game score tracking
-# - Inventory stock management
+# 🔹 Example — Wallet Update System
 
 
-# ------------------------------------------------
+# ===============================================================
 # 5️⃣ MEMBERSHIP OPERATORS
-# ------------------------------------------------
+# ===============================================================
 # in, not in
 
 users = ["Vijay", "Riya", "Amit"]
@@ -118,12 +101,7 @@ users = ["Vijay", "Riya", "Amit"]
 print("\nIs Vijay a user?", "Vijay" in users)
 print("Is Rahul not a user?", "Rahul" not in users)
 
-# 🔹 Practical Use Case:
-# - Authentication systems
-# - Access validation
-# - Keyword search in NLP
-
-# Example: Email whitelist system
+# 🔹 Example — Email Domain Check
 allowed_domains = ["gmail.com", "icicibank.com"]
 email = "vijay@icicibank.com"
 if any(domain in email for domain in allowed_domains):
@@ -132,51 +110,44 @@ else:
     print("Access Denied ❌")
 
 
-# ------------------------------------------------
+# ===============================================================
 # 6️⃣ IDENTITY OPERATORS
-# ------------------------------------------------
+# ===============================================================
 # is, is not
 
 a = [1, 2, 3]
 b = a
 c = [1, 2, 3]
 
-print("\nCheck Identity (is):", a is b)
-print("Check Equality (==):", a == c)
-print("Check Identity (is not):", a is not c)
+print("\nCheck Identity (a is b):", a is b)   # Same object
+print("Check Equality (a == c):", a == c)     # Same value
+print("Check Identity (a is not c):", a is not c)
 
-# 🔹 Practical Use Case:
-# - Memory optimization
-# - Reference checking (useful in large data structures)
+# 🔹 Use Case: Object reference and memory optimization
 
 
-# ------------------------------------------------
+# ===============================================================
 # 7️⃣ BITWISE OPERATORS
-# ------------------------------------------------
+# ===============================================================
 # &, |, ^, ~, <<, >>
 
-x = 10  # 1010
-y = 4   # 0100
+x = 10  # 1010 (binary)
+y = 4   # 0100 (binary)
 
-print("\nAND:", x & y)
-print("OR:", x | y)
-print("XOR:", x ^ y)
+print("\nAND:", x & y)        # 0000 → 0
+print("OR:", x | y)           # 1110 → 14
+print("XOR:", x ^ y)          # 1110 → 14
 print("NOT (~x):", ~x)
 print("Left Shift (x << 1):", x << 1)
 print("Right Shift (x >> 1):", x >> 1)
 
-# 🔹 Practical Use Case:
-# - Cryptography
-# - Network programming
-# - Image compression and optimization
+# 🔹 Example — Network / Encryption Applications
 
 
-# ============================================
-# 💡 PRACTICAL MINI PROJECT
-# ============================================
-
-# 🧾 Billing System Simulation
-# Calculate total price after discount and tax
+# ===============================================================
+# 💡 MINI PROJECT: SMART BILLING SYSTEM
+# ===============================================================
+# Task: Calculate total amount after discount and tax.
 
 price = 500
 quantity = 3
@@ -190,100 +161,43 @@ total_price = after_discount + (after_discount * tax / 100)
 
 print(f"\nSubtotal: ₹{subtotal}")
 print(f"After Discount: ₹{after_discount}")
-print(f"Total Price (with tax): ₹{round(total_price, 2)}")
+print(f"Total Price (with Tax): ₹{round(total_price, 2)}")
 
-# 🔹 Use Cases:
-# ✅ Finance — invoice computation
-# ✅ Retail — shopping cart engine
-# ✅ SaaS — subscription billing system
+# ✅ Used in: Retail Billing, Finance Systems, E-commerce Pricing
 
 
-# ============================================
-# 📊 SUMMARY CHART
-# ============================================
+# ===============================================================
+# 📊 QUICK REFERENCE TABLE
+# ===============================================================
 
-# | Operator Type      | Examples             | Business Use Case                 |
-# |--------------------|---------------------|-----------------------------------|
-# | Arithmetic         | +, -, /, %          | Billing, interest calc            |
-# | Comparison         | ==, >, <=           | Eligibility, validation           |
-# | Logical            | and, or, not        | Access control                    |
-# | Assignment         | +=, -=, *=          | Updating balance, score           |
-# | Membership         | in, not in          | Authentication, search            |
-# | Identity           | is, is not          | Reference tracking                |
-# | Bitwise            | &, |, ^, <<, >>     | Networking, encryption            |
-# -------------------------------------------
-# 04_operators.py
-# Understanding Python Operators
-# -------------------------------------------
+# | Operator Type  | Examples         | Real-World Use Case           |
+# |----------------|------------------|-------------------------------|
+# | Arithmetic     | +, -, *, /       | Billing, Interest Calc        |
+# | Comparison     | ==, >, <=        | Eligibility, Validation       |
+# | Logical        | and, or, not     | Access Control, Decision Tree |
+# | Assignment     | +=, -=, *=       | Score, Wallet, Inventory      |
+# | Membership     | in, not in       | Authentication, Search        |
+# | Identity       | is, is not       | Memory, Reference             |
+# | Bitwise        | &, |, ^, <<, >>  | Encryption, Networking        |
 
-# 1️⃣ Arithmetic Operators
-a = 10
-b = 3
 
-print("Addition:", a + b)        # 13
-print("Subtraction:", a - b)     # 7
-print("Multiplication:", a * b)  # 30
-print("Division:", a / b)        # 3.333...
-print("Floor Division:", a // b) # 3
-print("Modulus:", a % b)         # 1
-print("Exponentiation:", a ** b) # 1000
+# ===============================================================
+# 🧠 PRACTICAL EXERCISES
+# ===============================================================
 
-# 2️⃣ Comparison Operators
-print("a == b:", a == b)   # False
-print("a != b:", a != b)   # True
-print("a > b:", a > b)     # True
-print("a < b:", a < b)     # False
-print("a >= b:", a >= b)   # True
-print("a <= b:", a <= b)   # False
-
-# 3️⃣ Logical Operators
-x = True
-y = False
-
-print("x and y:", x and y)  # False
-print("x or y:", x or y)    # True
-print("not x:", not x)      # False
-
-# 4️⃣ Assignment Operators
-num = 5
-num += 3  # num = num + 3
-print("After += :", num)
-num *= 2  # num = num * 2
-print("After *= :", num)
-num -= 4  # num = num - 4
-print("After -= :", num)
-
-# 5️⃣ Membership Operators
-fruits = ["apple", "banana", "cherry"]
-print("'banana' in fruits:", "banana" in fruits)
-print("'grape' not in fruits:", "grape" not in fruits)
-
-# 6️⃣ Identity Operators
-a = [1, 2, 3]
-b = a
-c = [1, 2, 3]
-
-print("a is b:", a is b)     # True
-print("a is c:", a is c)     # False
-print("a == c:", a == c)     # True
-
-# -------------------------------------------
-# 🧠 Practical Use Cases
-# -------------------------------------------
-
-# 1. Shopping cart total using arithmetic operators
+# 1️⃣ Shopping Cart Total
 prices = [250, 399, 150, 99]
 total = 0
 for price in prices:
     total += price
-print("🛒 Cart Total:", total)
+print("\n🛒 Cart Total:", total)
 
-# 2. Currency conversion
+# 2️⃣ Currency Conversion
 usd_to_inr = 83.2
 dollars = 100
 print(f"${dollars} = ₹{dollars * usd_to_inr}")
 
-# 3. Access control using logical and comparison operators
+# 3️⃣ Access Control Logic
 age = 17
 has_permission = True
 if age >= 18 or has_permission:
@@ -291,15 +205,15 @@ if age >= 18 or has_permission:
 else:
     print("Access Denied ❌")
 
-# 4. Removing duplicates using membership operator
-unique = []
+# 4️⃣ Removing Duplicates (using `in`)
 nums = [1, 2, 2, 3, 4, 4, 5]
+unique = []
 for n in nums:
     if n not in unique:
         unique.append(n)
 print("Unique List:", unique)
 
-# 5. Input validation using logical operators
+# 5️⃣ Simple Login Validation
 username = "admin"
 password = "1234"
 
@@ -307,3 +221,7 @@ if username == "admin" and password == "1234":
     print("Login Successful 🔓")
 else:
     print("Invalid Credentials 🚫")
+
+# ===============================================================
+# 🏁 End of Lesson — Operators Mastered!
+# ===============================================================
