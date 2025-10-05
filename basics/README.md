@@ -86,7 +86,7 @@ Used to **make decisions** in your code based on conditions (True / False).
 
 
 
-### 🧮 06_Functions.py  
+### 🧮 06_functions.py  
 ### 📘 Topic: Understanding Functions — Reusability, Modular Design & Clean Code
 Functions are **mini-machines** in Python:  
 ➡️ **Input → Process → Output**  
