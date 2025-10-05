@@ -211,3 +211,99 @@ print(f"Total Price (with tax): ₹{round(total_price, 2)}")
 # | Membership         | in, not in          | Authentication, search            |
 # | Identity           | is, is not          | Reference tracking                |
 # | Bitwise            | &, |, ^, <<, >>     | Networking, encryption            |
+# -------------------------------------------
+# 04_operators.py
+# Understanding Python Operators
+# -------------------------------------------
+
+# 1️⃣ Arithmetic Operators
+a = 10
+b = 3
+
+print("Addition:", a + b)        # 13
+print("Subtraction:", a - b)     # 7
+print("Multiplication:", a * b)  # 30
+print("Division:", a / b)        # 3.333...
+print("Floor Division:", a // b) # 3
+print("Modulus:", a % b)         # 1
+print("Exponentiation:", a ** b) # 1000
+
+# 2️⃣ Comparison Operators
+print("a == b:", a == b)   # False
+print("a != b:", a != b)   # True
+print("a > b:", a > b)     # True
+print("a < b:", a < b)     # False
+print("a >= b:", a >= b)   # True
+print("a <= b:", a <= b)   # False
+
+# 3️⃣ Logical Operators
+x = True
+y = False
+
+print("x and y:", x and y)  # False
+print("x or y:", x or y)    # True
+print("not x:", not x)      # False
+
+# 4️⃣ Assignment Operators
+num = 5
+num += 3  # num = num + 3
+print("After += :", num)
+num *= 2  # num = num * 2
+print("After *= :", num)
+num -= 4  # num = num - 4
+print("After -= :", num)
+
+# 5️⃣ Membership Operators
+fruits = ["apple", "banana", "cherry"]
+print("'banana' in fruits:", "banana" in fruits)
+print("'grape' not in fruits:", "grape" not in fruits)
+
+# 6️⃣ Identity Operators
+a = [1, 2, 3]
+b = a
+c = [1, 2, 3]
+
+print("a is b:", a is b)     # True
+print("a is c:", a is c)     # False
+print("a == c:", a == c)     # True
+
+# -------------------------------------------
+# 🧠 Practical Use Cases
+# -------------------------------------------
+
+# 1. Shopping cart total using arithmetic operators
+prices = [250, 399, 150, 99]
+total = 0
+for price in prices:
+    total += price
+print("🛒 Cart Total:", total)
+
+# 2. Currency conversion
+usd_to_inr = 83.2
+dollars = 100
+print(f"${dollars} = ₹{dollars * usd_to_inr}")
+
+# 3. Access control using logical and comparison operators
+age = 17
+has_permission = True
+if age >= 18 or has_permission:
+    print("Access Granted ✅")
+else:
+    print("Access Denied ❌")
+
+# 4. Removing duplicates using membership operator
+unique = []
+nums = [1, 2, 2, 3, 4, 4, 5]
+for n in nums:
+    if n not in unique:
+        unique.append(n)
+print("Unique List:", unique)
+
+# 5. Input validation using logical operators
+username = "admin"
+password = "1234"
+
+if username == "admin" and password == "1234":
+    print("Login Successful 🔓")
+else:
+    print("Invalid Credentials 🚫")
