@@ -199,3 +199,202 @@ print("Type of data:", type(data))
 config = None
 if config is None:
     print("Configuration not loaded yet.")
+
+# 03_data_types.py
+# Understanding Python Data Types with Examples and Practical Use Cases
+# Added: explicit examples for
+#  - Shopping cart management
+#  - Currency conversion
+#  - Access control
+#  - Removing duplicates
+#  - Input validation
+
+import re
+from typing import List, Dict, Tuple
+
+# ---------------------------
+# Core data-type examples (brief)
+# ---------------------------
+def core_examples():
+    # int, float, str, bool (quick show)
+    age = 30
+    price = 99.99
+    name = "Vijay"
+    is_active = True
+    print("Core Types:", age, price, name, is_active)
+
+
+# ---------------------------
+# Practical Use Case 1:
+# Shopping cart management
+# ---------------------------
+def add_item(cart: List[Dict], name: str, price: float, qty: int = 1):
+    """Add an item; if exists, increase quantity."""
+    for item in cart:
+        if item["name"] == name:
+            item["qty"] += qty
+            return
+    cart.append({"name": name, "price": price, "qty": qty})
+
+
+def remove_item(cart: List[Dict], name: str):
+    """Remove item by name."""
+    cart[:] = [item for item in cart if item["name"] != name]
+
+
+def cart_total(cart: List[Dict]) -> float:
+    return sum(item["price"] * item["qty"] for item in cart)
+
+
+def shopping_cart_example():
+    print("\n--- Shopping Cart Management Example ---")
+    cart = []
+    add_item(cart, "milk", 45.0, 2)
+    add_item(cart, "bread", 30.0, 1)
+    add_item(cart, "eggs", 5.0, 12)
+    add_item(cart, "milk", 45.0, 1)  # increments milk qty
+
+    print("Cart items:", cart)
+    print("Total (INR):", cart_total(cart))
+
+    remove_item(cart, "bread")
+    print("After removing bread:", cart)
+    print("Total after removal (INR):", cart_total(cart))
+
+
+# ---------------------------
+# Practical Use Case 2:
+# Currency conversion (simple, direct rates)
+# ---------------------------
+def convert_currency(amount: float, from_curr: str, to_curr: str, rates: Dict[Tuple[str, str], float]) -> float:
+    """Convert amount using a direct-rate mapping: rates[(from,to)] = multiplier"""
+    key = (from_curr.upper(), to_curr.upper())
+    if key not in rates:
+        raise ValueError(f"Conversion rate not found for {from_curr} -> {to_curr}")
+    return amount * rates[key]
+
+
+def currency_conversion_example():
+    print("\n--- Currency Conversion Example ---")
+    rates = {
+        ("USD", "INR"): 83.14,
+        ("INR", "USD"): 1 / 83.14,
+        ("EUR", "USD"): 1.08,
+    }
+    usd_amount = 250.0
+    inr = convert_currency(usd_amount, "USD", "INR", rates)
+    print(f"{usd_amount} USD = {inr:.2f} INR")
+
+    # chaining example (EUR -> USD -> INR)
+    eur_amount = 100.0
+    usd_from_eur = convert_currency(eur_amount, "EUR", "USD", rates)
+    inr_from_eur = convert_currency(usd_from_eur, "USD", "INR", rates)
+    print(f"{eur_amount} EUR ≈ {inr_from_eur:.2f} INR")
+
+
+# ---------------------------
+# Practical Use Case 3:
+# Access control (simple login + role check)
+# ---------------------------
+USERS = {
+    "vijay": {"password": "pass123", "roles": ["user", "editor"]},
+    "admin": {"password": "root", "roles": ["admin", "user", "editor"]},
+}
+
+
+def authenticate(username: str, password: str) -> bool:
+    user = USERS.get(username)
+    return user is not None and user["password"] == password
+
+
+def has_permission(username: str, required_role: str) -> bool:
+    user = USERS.get(username)
+    return user is not None and required_role in user["roles"]
+
+
+def access_control_example():
+    print("\n--- Access Control Example ---")
+    uname = "vijay"
+    pwd = "pass123"
+    if authenticate(uname, pwd):
+        print(f"{uname} authenticated.")
+        if has_permission(uname, "admin"):
+            print("Access granted: admin operations allowed.")
+        else:
+            print("Access limited: admin operations denied.")
+    else:
+        print("Authentication failed.")
+
+
+# ---------------------------
+# Practical Use Case 4:
+# Removing duplicates (emails) and preserving order
+# ---------------------------
+def remove_duplicates_keep_order(seq: List[str]) -> List[str]:
+    seen = set()
+    out = []
+    for item in seq:
+        if item not in seen:
+            seen.add(item)
+            out.append(item)
+    return out
+
+
+def duplicates_example():
+    print("\n--- Removing Duplicates Example ---")
+    emails = ["a@example.com", "b@example.com", "a@example.com", "c@example.com", "b@example.com"]
+    print("Original:", emails)
+    unique_unordered = list(set(emails))  # may reorder
+    print("Unique (unordered):", unique_unordered)
+    unique_ordered = remove_duplicates_keep_order(emails)
+    print("Unique (preserve order):", unique_ordered)
+
+
+# ---------------------------
+# Practical Use Case 5:
+# Input validation (age and email)
+# ---------------------------
+def validate_age(age_str: str) -> Tuple[bool, int]:
+    """Return (is_valid, age_int_or_0). Accepts ages 0-120."""
+    try:
+        age = int(age_str)
+        if 0 <= age <= 120:
+            return True, age
+        return False, 0
+    except ValueError:
+        return False, 0
+
+
+EMAIL_REGEX = re.compile(r'^[\w\.-]+@[\w\.-]+\.\w+$')
+
+
+def validate_email(email: str) -> bool:
+    return EMAIL_REGEX.match(email) is not None
+
+
+def input_validation_example():
+    print("\n--- Input Validation Example ---")
+    tests = ["25", "0", "-2", "abc", "130"]
+    for t in tests:
+        valid, val = validate_age(t)
+        print(f"Age input '{t}': valid={valid}, value={val}")
+
+    emails = ["vijay@example.com", "invalid-email@", "a.b@co.in"]
+    for e in emails:
+        print(f"Email '{e}' valid? -> {validate_email(e)}")
+
+
+# ---------------------------
+# Runner
+# ---------------------------
+def main():
+    core_examples()
+    shopping_cart_example()
+    currency_conversion_example()
+    access_control_example()
+    duplicates_example()
+    input_validation_example()
+
+
+if __name__ == "__main__":
+    main()
