@@ -35,3 +35,12 @@ A comprehensive introduction to Python’s built-in data types with hands-on exa
 - **Removing duplicates**: deduplicate lists while preserving order.
 - **Input validation**: safe parsing and validation for ages and email addresses.
 
+### 04_operators.py  
+Learn how Python uses **arithmetic**, **comparison**, **logical**, **assignment**, **membership**, and **identity** operators.  
+Includes **real-world mini use cases** such as:
+- Shopping cart total  
+- Currency conversion  
+- Access control logic  
+- Duplicate removal  
+- Input validation
+
