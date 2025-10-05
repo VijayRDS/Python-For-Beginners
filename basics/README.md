@@ -44,3 +44,26 @@ Includes **real-world mini use cases** such as:
 - Duplicate removal  
 - Input validation
 
+
+
+# 🧭 Python Lesson 05 — Control Statements
+
+### 📘 Topic: Decision Making and Control Flow in Python  
+Control statements are **the brain of your program** — they decide *how*, *when*, and *what* part of your code should execute.  
+They’re essential for automation, business logic, and workflow control.
+
+---
+
+## 🧩 1️⃣ CONDITIONAL STATEMENTS — `if`, `elif`, `else`
+
+### 🧠 Concept:
+Used to **make decisions** in your code based on conditions (True / False).
+
+```python
+balance = 1500
+withdrawal = 1000
+
+if balance >= withdrawal:
+    print("✅ Withdrawal Successful!")
+else:
+    print("❌ Insufficient Balance!")
