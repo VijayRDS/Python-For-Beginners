@@ -87,8 +87,7 @@ Used to **make decisions** in your code based on conditions (True / False).
 
 
 ### 🧮 06_Functions.py  
-### 📘 Topic: Understanding Functions — Reusability, Modular Design
-& Clean Code
+### 📘 Topic: Understanding Functions — Reusability, Modular Design & Clean Code
 Functions are **mini-machines** in Python:  
 ➡️ **Input → Process → Output**  
 They make programs **organized**, **modular**, and **easy to maintain**.
@@ -106,19 +105,6 @@ They make programs **organized**, **modular**, and **easy to maintain**.
 ### 📘 Topic: Object-Oriented Programming (OOP)
 OOP organizes code into **blueprints (classes)** and **real entities (objects)**.  
 Think: 🧩 **Class = Design**, 🚗 **Object = Car built from it**
-
-### 🧩 1️⃣ Class & Object Basics
-```python
-class Car:
-    def __init__(self, brand, model, price):
-        self.brand = brand
-        self.model = model
-        self.price = price
-    def display(self):
-        print(f"{self.brand} {self.model} - ₹{self.price}")
-
-car1 = Car("Tesla", "Model 3", 3500000)
-car1.display()
 
 
 
