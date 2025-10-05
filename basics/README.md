@@ -15,4 +15,17 @@ Introduces Python variables and how they store data of different types.
 - Type checking using `type()`  
 
 
+### 🧠 03_data_types.py
+A comprehensive introduction to Python’s built-in data types with hands-on examples.  
+**Concepts Covered:**
+- Integers, Floats, Strings, Booleans  
+- Lists, Tuples, Dictionaries, Sets  
+- Type Conversion (Casting)  
+- NoneType and its usage  
+**Practical Use Cases:**  
+- Shopping cart management  
+- Currency conversion  
+- Access control  
+- Removing duplicates  
+- Input validation  
 
