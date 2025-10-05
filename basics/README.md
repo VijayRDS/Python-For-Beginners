@@ -67,3 +67,17 @@ if balance >= withdrawal:
     print("✅ Withdrawal Successful!")
 else:
     print("❌ Insufficient Balance!")
+
+
+
+# 🧮 Python Lesson 06 — Functions & Modular Design
+
+### 📘 Topic: Understanding Functions — Reusability & Clean Code
+Functions are **mini-machines** in Python:  
+➡️ **Input → Process → Output**  
+They make programs **organized**, **modular**, and **easy to maintain**.
+
+---
+
+## 🧩 1️⃣ What is a Function?
+A **function** is a reusable block of code that performs one specific task.
