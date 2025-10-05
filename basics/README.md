@@ -34,12 +34,7 @@ A comprehensive introduction to Python’s built-in data types with hands-on exa
 - Lists, Tuples, Dictionaries, Sets  
 - Type Conversion (Casting)  
 - NoneType and its usage  
-**Practical Use Cases:**  
-- Shopping cart management  
-- Currency conversion  
-- Access control  
-- Removing duplicates  
-- Input validation  
+
 #### Practical Use Cases included in 03_data_types.py
 - **Shopping cart management**: add/remove items, quantity handling, total calculation.
 - **Currency conversion**: simple conversion using a rate map and chaining.
@@ -72,13 +67,13 @@ Includes **real-world mini use cases** such as:
 
 
 
-### 🧭 05_Control Statements
+### 🧭 05_control_statements.py
 
 ### 📘 Topic: Decision Making and Control Flow in Python  
 Control statements are **the brain of your program** — they decide *how*, *when*, and *what* part of your code should execute.  
 They’re essential for automation, business logic, and workflow control.
 
-### 🧩 1️⃣ 06_CONDITIONAL STATEMENTS — `if`, `elif`, `else`
+### 🧩 1️⃣ `if`, `elif`, `else`
 
 ### 🧠 Concept:
 Used to **make decisions** in your code based on conditions (True / False).
@@ -91,9 +86,9 @@ Used to **make decisions** in your code based on conditions (True / False).
 
 
 
-### 🧮 06_Functions & Modular Design
-
-### 📘 Topic: Understanding Functions — Reusability & Clean Code
+### 🧮 06_Functions.py  
+### 📘 Topic: Understanding Functions — Reusability, Modular Design
+& Clean Code
 Functions are **mini-machines** in Python:  
 ➡️ **Input → Process → Output**  
 They make programs **organized**, **modular**, and **easy to maintain**.
@@ -106,7 +101,7 @@ They make programs **organized**, **modular**, and **easy to maintain**.
 
 
 
-### 🧱 07_Classes & Objects (OOP Basics)
+### 🧱 07_Classes and Objects (OOP Basics).py
 
 ### 📘 Topic: Object-Oriented Programming (OOP)
 OOP organizes code into **blueprints (classes)** and **real entities (objects)**.  
