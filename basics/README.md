@@ -46,7 +46,7 @@ Includes **real-world mini use cases** such as:
 
 
 
-# 🧭 Python Lesson 05 — Control Statements
+### 🧭 Python Lesson 05 — Control Statements
 
 ### 📘 Topic: Decision Making and Control Flow in Python  
 Control statements are **the brain of your program** — they decide *how*, *when*, and *what* part of your code should execute.  
@@ -54,23 +54,13 @@ They’re essential for automation, business logic, and workflow control.
 
 ---
 
-## 🧩 1️⃣ CONDITIONAL STATEMENTS — `if`, `elif`, `else`
+### 🧩 1️⃣ CONDITIONAL STATEMENTS — `if`, `elif`, `else`
 
 ### 🧠 Concept:
 Used to **make decisions** in your code based on conditions (True / False).
 
-```python
-balance = 1500
-withdrawal = 1000
 
-if balance >= withdrawal:
-    print("✅ Withdrawal Successful!")
-else:
-    print("❌ Insufficient Balance!")
-
-
-
-# 🧮 Python Lesson 06 — Functions & Modular Design
+### 🧮 Python Lesson 06 — Functions & Modular Design
 
 ### 📘 Topic: Understanding Functions — Reusability & Clean Code
 Functions are **mini-machines** in Python:  
@@ -79,5 +69,5 @@ They make programs **organized**, **modular**, and **easy to maintain**.
 
 ---
 
-## 🧩 1️⃣ What is a Function?
+### 🧩 1️⃣ What is a Function?
 A **function** is a reusable block of code that performs one specific task.
