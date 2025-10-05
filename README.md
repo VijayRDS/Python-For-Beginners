@@ -23,11 +23,11 @@ Python-For-Beginners/
 │   ├── 01_hello_world.py   # Writing your first Python program
 │   ├── 02_variables.py     # Introduction to variables
 │   ├── 03_data_types.py    # Understanding data types
+│   ├── 04_functions.py     # Writing reusable functions
+│   ├── 05_classes.py       # Understanding Object-Oriented Programming
 │   ├── ...
 │
 ├── intermediate/           # Intermediate-level concepts
-│   ├── 01_functions.py     # Writing reusable functions
-│   ├── 02_classes.py       # Understanding Object-Oriented Programming
 │   ├── ...
 │
 ├── projects/               # Hands-on projects
