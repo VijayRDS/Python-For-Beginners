@@ -1,0 +1,248 @@
+# ===============================================================
+# 🧱 PYTHON CLASSES & OBJECTS — The Foundation of OOP
+# ===============================================================
+# OOP (Object-Oriented Programming) helps organize code using
+# "classes" (blueprints) and "objects" (real-world entities).
+# Think of a class as a 'template' and an object as an 'instance' of it.
+# ===============================================================
+
+# ---------------------------------------------------------------
+# 1️⃣ DEFINING A CLASS
+# ---------------------------------------------------------------
+# A class groups related data (variables) and functions (methods).
+
+class Car:
+    # Attributes (variables)
+    wheels = 4  # Class attribute (common to all cars)
+
+    # Constructor method (__init__) — initializes new objects
+    def __init__(self, brand, model, price):
+        self.brand = brand    # Instance variable
+        self.model = model
+        self.price = price
+
+    # Method (function inside class)
+    def display_info(self):
+        print(f"🚗 Car: {self.brand} {self.model}, Price: ₹{self.price}")
+
+    def start_engine(self):
+        print(f"{self.brand} {self.model}'s engine started 🔑")
+
+# ---------------------------------------------------------------
+# 2️⃣ CREATING OBJECTS (INSTANCES)
+# ---------------------------------------------------------------
+
+car1 = Car("Tesla", "Model 3", 3500000)
+car2 = Car("Hyundai", "i20", 900000)
+
+car1.display_info()
+car2.display_info()
+
+car1.start_engine()
+car2.start_engine()
+
+# ---------------------------------------------------------------
+# 3️⃣ UNDERSTANDING SELF
+# ---------------------------------------------------------------
+# 'self' represents the object calling the method.
+# It helps access instance attributes and methods.
+
+# Example:
+# When we call car1.display_info() → Python internally runs:
+# Car.display_info(car1)
+
+# ---------------------------------------------------------------
+# 4️⃣ CLASS vs INSTANCE VARIABLES
+# ---------------------------------------------------------------
+print("\nNumber of wheels (Class Variable):", Car.wheels)
+car1.wheels = 6  # changing only for car1
+print("Car1 Wheels:", car1.wheels)
+print("Car2 Wheels:", car2.wheels)
+
+# ---------------------------------------------------------------
+# 5️⃣ ADDING BEHAVIOR (Methods)
+# ---------------------------------------------------------------
+
+class BankAccount:
+    def __init__(self, name, balance=0):
+        self.name = name
+        self.balance = balance
+
+    def deposit(self, amount):
+        self.balance += amount
+        print(f"💰 {self.name} deposited ₹{amount}. New balance: ₹{self.balance}")
+
+    def withdraw(self, amount):
+        if amount <= self.balance:
+            self.balance -= amount
+            print(f"🏧 {self.name} withdrew ₹{amount}. Remaining balance: ₹{self.balance}")
+        else:
+            print("❌ Insufficient balance!")
+
+# Creating objects
+acc1 = BankAccount("Vijay", 5000)
+acc2 = BankAccount("Riya", 10000)
+
+acc1.deposit(2000)
+acc1.withdraw(1500)
+acc2.withdraw(12000)
+
+# ---------------------------------------------------------------
+# 6️⃣ CONSTRUCTORS & DESTRUCTORS
+# ---------------------------------------------------------------
+
+class Student:
+    def __init__(self, name, roll):
+        self.name = name
+        self.roll = roll
+        print(f"🎓 Student {self.name} (Roll {self.roll}) created!")
+
+    def __del__(self):
+        print(f"🧾 Object {self.name} is being deleted...")
+
+# Creating and deleting objects
+s1 = Student("Vijay", 101)
+del s1  # Calls destructor automatically
+
+# ---------------------------------------------------------------
+# 7️⃣ BUILT-IN METHODS AND ATTRIBUTES
+# ---------------------------------------------------------------
+# Every class object has a special dictionary attribute __dict__
+# that stores its data.
+
+car3 = Car("BMW", "X5", 7500000)
+print("\n🔍 car3 attributes:", car3.__dict__)
+
+# ---------------------------------------------------------------
+# 8️⃣ CLASS METHODS & STATIC METHODS
+# ---------------------------------------------------------------
+
+class Employee:
+    company = "TechVision Pvt Ltd"  # Class variable
+
+    def __init__(self, name, salary):
+        self.name = name
+        self.salary = salary
+
+    # Instance Method
+    def show(self):
+        print(f"{self.name} earns ₹{self.salary} at {Employee.company}")
+
+    # Class Method
+    @classmethod
+    def change_company(cls, new_name):
+        cls.company = new_name
+        print(f"🏢 Company name updated to: {cls.company}")
+
+    # Static Method
+    @staticmethod
+    def greet():
+        print("👋 Welcome to the Employee Portal!")
+
+Employee.greet()
+emp1 = Employee("Amit", 80000)
+emp1.show()
+
+Employee.change_company("InnovaTech")
+emp1.show()
+
+# ---------------------------------------------------------------
+# 9️⃣ INHERITANCE — Reusing Code
+# ---------------------------------------------------------------
+
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        print(f"{self.name} makes a sound")
+
+# Derived Class
+class Dog(Animal):
+    def speak(self):
+        print(f"{self.name} barks 🐶")
+
+class Cat(Animal):
+    def speak(self):
+        print(f"{self.name} meows 🐱")
+
+dog1 = Dog("Tommy")
+cat1 = Cat("Kitty")
+
+dog1.speak()
+cat1.speak()
+
+# ---------------------------------------------------------------
+# 🔟 ENCAPSULATION — Data Hiding
+# ---------------------------------------------------------------
+
+class Account:
+    def __init__(self, name, balance):
+        self.name = name
+        self.__balance = balance  # Private variable
+
+    def deposit(self, amount):
+        self.__balance += amount
+
+    def get_balance(self):
+        return self.__balance
+
+acc = Account("Ravi", 5000)
+acc.deposit(2000)
+print("\n🔒 Balance (via method):", acc.get_balance())
+
+# Trying to access private variable directly (will fail)
+# print(acc.__balance)  # ❌ AttributeError
+
+# Accessing via name mangling (not recommended)
+print("Accessing hidden value:", acc._Account__balance)
+
+# ---------------------------------------------------------------
+# 🔹 MINI PROJECT — LIBRARY MANAGEMENT SYSTEM
+# ---------------------------------------------------------------
+
+class Book:
+    def __init__(self, title, author):
+        self.title = title
+        self.author = author
+        self.is_issued = False
+
+    def issue_book(self):
+        if not self.is_issued:
+            self.is_issued = True
+            print(f"📚 '{self.title}' issued successfully!")
+        else:
+            print(f"❌ '{self.title}' is already issued.")
+
+    def return_book(self):
+        if self.is_issued:
+            self.is_issued = False
+            print(f"🔄 '{self.title}' returned successfully!")
+        else:
+            print(f"'{self.title}' was not issued.")
+
+# Using the class
+b1 = Book("Python Basics", "Guido van Rossum")
+b1.issue_book()
+b1.return_book()
+b1.return_book()
+
+# ===============================================================
+# 🧩 SUMMARY TABLE
+# ===============================================================
+
+# | Concept         | Keyword / Method | Purpose                            |
+# |-----------------|------------------|------------------------------------|
+# | Class           | class            | Blueprint for creating objects     |
+# | Object          | instance         | Real entity with attributes        |
+# | Constructor     | __init__         | Initialize object                  |
+# | Destructor      | __del__          | Cleanup after deletion             |
+# | Class Variable  | Shared across all objects                         |
+# | Instance Var.   | Unique to each object                             |
+# | Class Method    | @classmethod      | Works on class-level data          |
+# | Static Method   | @staticmethod     | Utility method (no self/cls)       |
+# | Inheritance     | Parent → Child    | Code reuse and extension           |
+# | Encapsulation   | __var (private)   | Data hiding and protection         |
+# ===============================================================
+
+print("\n🏁 End of Lesson — Classes & Objects Mastered!")
