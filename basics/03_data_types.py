@@ -200,6 +200,168 @@ config = None
 if config is None:
     print("Configuration not loaded yet.")
 
+# ============================================
+# 📘 Python Data Types — Explained in Depth
+# ============================================
+
+# Python has several built-in data types that help structure and manage data.
+# These can be broadly classified into:
+# 1️⃣ Numeric Types
+# 2️⃣ Sequence Types
+# 3️⃣ Set Types
+# 4️⃣ Mapping Types
+# 5️⃣ Boolean Type
+# 6️⃣ None Type
+
+# ------------------------------------------------
+# 1️⃣ NUMERIC TYPES: int, float, complex
+# ------------------------------------------------
+
+# Integers: Whole numbers
+x = 42
+print("Integer:", x, type(x))
+
+# Floats: Decimal numbers
+price = 99.99
+print("Float:", price, type(price))
+
+# Complex numbers: used in scientific and engineering calculations
+z = 3 + 4j
+print("Complex:", z, type(z))
+
+# 🔹 Practical Use Case:
+# - Bank balance calculations (float)
+# - Machine learning computations (float)
+# - Electrical circuit calculations (complex)
+
+# Example: Calculating compound interest
+principal = 10000
+rate = 5
+time = 2
+amount = principal * (1 + rate/100) ** time
+print("Compound Interest:", amount)
+
+
+# ------------------------------------------------
+# 2️⃣ SEQUENCE TYPES: str, list, tuple
+# ------------------------------------------------
+
+# Strings
+message = "Python is powerful!"
+print("String:", message.upper())
+
+# Lists (Mutable)
+shopping_list = ["Milk", "Bread", "Eggs"]
+shopping_list.append("Butter")
+print("List:", shopping_list)
+
+# Tuples (Immutable)
+coordinates = (27.2046, 77.4977)
+print("Tuple:", coordinates)
+
+# 🔹 Practical Use Case:
+# - String: Sentiment analysis in NLP
+# - List: Managing inventory
+# - Tuple: Storing fixed configuration data
+
+
+# ------------------------------------------------
+# 3️⃣ SET TYPES: set, frozenset
+# ------------------------------------------------
+
+# Set: Unique, unordered elements
+unique_items = {"apple", "banana", "apple", "cherry"}
+print("Set:", unique_items)
+
+# Frozenset: Immutable set
+frozen = frozenset(["python", "java", "python"])
+print("Frozenset:", frozen)
+
+# 🔹 Practical Use Case:
+# - Removing duplicates from user data
+# - Tag management system
+# - Ensuring unique records in a dataset
+
+
+# ------------------------------------------------
+# 4️⃣ MAPPING TYPE: dict
+# ------------------------------------------------
+
+# Dictionary: key-value pairs
+user = {
+    "name": "Vijay Rastogi",
+    "role": "Banking Operations Manager",
+    "goals": ["Data Science", "UPSC", "Startups"]
+}
+print("Dictionary:", user)
+
+# Access value
+print("User Role:", user["role"])
+
+# 🔹 Practical Use Case:
+# - JSON data handling in APIs
+# - Employee database
+# - Configuration settings
+
+
+# ------------------------------------------------
+# 5️⃣ BOOLEAN TYPE: bool
+# ------------------------------------------------
+
+is_logged_in = True
+has_permission = False
+
+# Example: Access control system
+if is_logged_in and has_permission:
+    print("Access Granted ✅")
+else:
+    print("Access Denied ❌")
+
+# 🔹 Practical Use Case:
+# - Security systems
+# - Decision-making in automation
+
+
+# ------------------------------------------------
+# 6️⃣ NONE TYPE
+# ------------------------------------------------
+
+result = None
+print("Result:", result)
+
+# 🔹 Practical Use Case:
+# - Database NULL values
+# - Default return values in functions
+
+
+# ============================================
+# 💡 Summary of Real-World Use Cases
+# ============================================
+
+# ✅ Shopping cart management → list, dict
+# ✅ Currency conversion → float, dict
+# ✅ Access control → bool
+# ✅ Removing duplicates → set
+# ✅ Input validation → str, bool
+
+# ============================================
+# 🚀 Practice Exercise
+# ============================================
+# Write a program that:
+# - Takes a list of expenses
+# - Removes duplicates
+# - Calculates total and average
+# - Displays them neatly
+
+expenses = [120, 150, 120, 80, 200, 150]
+unique_expenses = set(expenses)
+total = sum(unique_expenses)
+average = total / len(unique_expenses)
+print(f"\nExpenses Summary:\nUnique Expenses: {unique_expenses}\nTotal: ₹{total}\nAverage: ₹{average:.2f}")
+
+
+
+
 # 03_data_types.py
 # Understanding Python Data Types with Examples and Practical Use Cases
 # Added: explicit examples for
